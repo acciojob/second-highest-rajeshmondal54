@@ -10,13 +10,12 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let uniqueArr = Array.from(new Set(arr.map(Number)));
-			uniqueArr.sort((a, b) => b - a);
-			return uniqueArr.length > 1 ? uniqueArr[1] : "Not enough unique elements";
-			
+			arr = arr.map(Number);
+			let uniqueArr = [...new Set(arr)];
+            uniqueArr.sort((a, b) => b - a);
+			return uniqueArr.length > 1 ? uniqueArr[1] : -Infinity;
 		}
 	
-
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
